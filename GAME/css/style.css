@@ -1,0 +1,90 @@
+*,
+*::before
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #e7e1cb;
+    color: #714a02;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+margin: 0;
+padding: 0;
+
+}
+
+
+h1 {
+    color: #dd891a;
+    font-size: 6rem;
+    line-height: 1;
+    text-align: center;
+
+}
+
+
+h2 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 4rem auto;
+    background-color: #714a02;
+    padding: 1rem 1.25rem;
+    font-size: 1.5rem;
+    border: 0;
+    border-radius: 0.5rem;
+    color: #e7e1cb;
+
+}
+
+
+main {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 50px
+    
+}
+
+
+.hole {
+    flex: 1 0 calc(100% /3);
+    overflow: hidden;
+    position: relative;
+}
+
+.hole::after {
+    content: "";
+    display: block;
+    background: url(../img/dirt.svg) bottom center no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 1000px;
+    position: absolute;
+    z-index: 2;
+    bottom: -20px;
+}
+
+
+.mole {
+    background: url(../img/mole.svg) bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: all 400ms;
+}
+
+
+.hole.up .mole {
+    top: 10%;
+}
